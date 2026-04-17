@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const TWITTER_API_KEY = process.env.REACT_APP_TWITTER_API;
+const TWITTER_API_KEY = process.env.REACT_APP_TWITTERAPI_KEY;
 
 function normalizeTweetsResponse(payload) {
   if (Array.isArray(payload?.tweets)) return payload.tweets;
