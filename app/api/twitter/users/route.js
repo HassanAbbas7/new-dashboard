@@ -19,9 +19,10 @@ function normalizeCsv(value = "") {
 
 async function twitterFetch(path, searchParams = {}) {
   const apiKey = process.env.REACT_APP_TWITTERAPI_KEY;
+  // const apiKey = "new1_c5693e3a0e8545babb1ec58996f5b3cf"
 
   if (!apiKey) {
-    throw new Error("Missing NEXT_PUBLIC_TWITTERAPI_KEY in environment variables");
+    throw new Error("Missing REACT_APP_TWITTERAPI_KEY in environment variables");
   }
 
   const url = new URL(`${API_BASE}${path}`);

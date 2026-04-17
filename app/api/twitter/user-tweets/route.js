@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const TWITTER_API_KEY = process.env.REACT_APP_TWITTERAPI_KEY;
+// const TWITTER_API_KEY = "new1_c5693e3a0e8545babb1ec58996f5b3cf"
 
 function normalizeTweetsResponse(payload) {
   if (Array.isArray(payload?.tweets)) return payload.tweets;
@@ -26,7 +27,7 @@ export async function GET(req) {
 
     if (!TWITTER_API_KEY) {
       return NextResponse.json(
-        { error: "Missing TWITTER_API_KEY in env" },
+        { error: "Missing REACT_APP_TWITTERAPI_KEY in env" },
         { status: 500 }
       );
     }

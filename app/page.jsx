@@ -495,14 +495,14 @@ export default function IndiaDeskDashboard() {
   const dashboardStats = useMemo(() => {
     return managersData.reduce(
       (acc, manager) => {
-        acc.postsToday += manager.stats.tweets;
+        acc.totalPosts += manager.stats.tweets;
         acc.totalReach += manager.stats.followers;
         acc.engagements += manager.stats.likes;
         acc.activeAccounts += manager.stats.accounts;
         return acc;
       },
       {
-        postsToday: 0,
+        totalPosts: 0,
         totalReach: 0,
         engagements: 0,
         activeAccounts: 0,
@@ -565,10 +565,10 @@ export default function IndiaDeskDashboard() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-slate-400 text-sm font-medium flex items-center gap-1">
-                  Posts today
+                  Total Posts
                 </p>
                 <p className="text-3xl font-extrabold text-slate-800 mt-1">
-                  {loading ? "..." : compactNumber(dashboardStats.postsToday)}
+                  {loading ? "..." : compactNumber(dashboardStats.totalPosts)}
                 </p>
               </div>
             </div>
